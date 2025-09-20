@@ -1,4 +1,4 @@
-# regressionTest for Create/Buy the Event/Voucher
+# Buy the Event/Voucher
 
 A Selenium + TestNG regression test suite (Java 17, Maven) for customer and portal flows.
 
