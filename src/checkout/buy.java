@@ -13,7 +13,6 @@ public class buy extends BaseTest_Customer {
     @Test
     public void checkout() {
         waitForClickable(By.xpath("//button[@type='submit' and contains(text(), 'Checkout')]"));
-        /// TriApp
         waitForClickable(By.xpath("/html/body/div/div[1]/div[2]/div[2]/button"));
     }
 }

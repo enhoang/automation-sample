@@ -11,7 +11,7 @@ public class ConfigManagement {
         try {
             FileInputStream fis = new FileInputStream("src/config_env/config.properties");
             props.load(fis);
-            props.setProperty("env", env); // ⚠ Ghi đè "env" bằng giá trị từ testng.xml
+            props.setProperty("env", env); // "env" in testng.xml
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -33,32 +33,12 @@ public class ConfigManagement {
         return get("homeurl." + getEnv());
     }
 
-    public static String geteventUrl() {
-        return get("eventmanagement_url." + getEnv());
-    }
-
-    public static String getvoucherUrl() {
-        return get("vouchermanagement_url." + getEnv());
-    }
-
     public static String getemkpUrl() {
         return get("evtMkp_url." + getEnv());
     }
 
     public static String getvmkpUrl() {
         return get("voucherMkp_url." + getEnv());
-    }
-
-    public static String getMerchantText() {
-        return get("merchantText." + getEnv());
-    }
-
-    public static String geteventTitle() {
-        return get("eventTitle." + getEnv());
-    }
-
-    public static String getvoucherTitle() {
-        return get("voucherTitle." + getEnv());
     }
 
 }
