@@ -1,9 +1,9 @@
 [
   {
-    "cardholder": "tuhy tuhy",
-    "email": "autotestte@yopmail.com",
+    "cardholder": "sample",
+    "email": "samplee@yopmail.com",
     "mobile": "84912345678",
-    "bank_name": "Techcombank",
-    "desc": "Thanh toán đơn hàng"
+    "bank_name": "Sample Bank",
+    "desc": "Pay for item."
   }
 ]

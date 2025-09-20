@@ -1,8 +1,8 @@
 <suite name="Regression Login">
     <!-- IMPORTANT: Before running this test flow, make sure your ENVIRONMENT is correct. -->
-    <parameter name="env" value="staging"/>          <!-- staging / uat / prod -->
+    <parameter name="env" value="staging"/>          <!-- staging -->
     <parameter name="browser" value="chrome"/>       <!-- chrome / firefox / safari -->
-    <parameter name="ui.enabled" value="true"/>      <!-- true = có UI, false = headless -->
+    <parameter name="ui.enabled" value="true"/>      <!-- true = enable UI, false = headless -->
     <parameter name="wait.timeout" value="10"/>      <!-- default timeout -->
     <test name="Login">
         <!-- IMPORTANT: Before running this test flow, make sure your DATA/CONFIGURATION is correct. -->

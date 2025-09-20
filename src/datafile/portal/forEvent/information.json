@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Event create by Auto",
+    "description": "Event 1",
+    "genre": "Comedy",
+    "country": "Vietnam",
+    "city": "Ho Chi Minh",
+    "state": "Ho Chi Minh",
+    "postal": "700000",
+    "address": "Ho Chi Minh",
+    "start day": "18/08/2025",
+    "start hour": "11:50",
+    "end day": "18/08/2025",
+    "end hour": "12:00",
+    "price desc": ""
+  }
+]

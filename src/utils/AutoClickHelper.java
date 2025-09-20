@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.time.Duration;
 
 public class AutoClickHelper {
-    // Hàm chờ element clickable rồi click
+    // Wait for element then click
     public static void waitAndClick(WebDriver driver, By locator, int waitSeconds) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitSeconds));
@@ -25,12 +25,12 @@ public class AutoClickHelper {
         }
     }
 
-    // Hàm click nhiều lần có chờ giữa mỗi click
+    // Multiple click
     public static void clickMultipleTimes(WebDriver driver, By locator, int times, int waitBeforeClickMs) {
         for (int i = 0; i < times; i++) {
-            waitAndClick(driver, locator, 10); // chờ tối đa 10 giây element clickable
+            waitAndClick(driver, locator, 10); // wait up to 10s for element can click
             try {
-                Thread.sleep(waitBeforeClickMs); // nghỉ giữa các click
+                Thread.sleep(waitBeforeClickMs);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -50,7 +50,7 @@ public class AutoClickHelper {
                 int times = Integer.parseInt(clickObj.get("times").toString());
                 int waitBeforeClickMs = clickObj.get("waitBeforeClick") != null
                         ? Integer.parseInt(clickObj.get("waitBeforeClick").toString())
-                        : 300; // mặc định 300ms
+                        : 300; // default 300ms
 
                 By byLocator;
                 switch (type.toLowerCase()) {

@@ -9,15 +9,15 @@ mvn -DskipTests=true clean install
 ```
 - Login (customer):
 ```bash
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/login.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true test
+mvn -Dsurefire.suiteXmlFiles=testSuite/login.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true test
 ```
 - Buy Events (full flow):
 ```bash
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/buyEvent.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
+mvn -Dsurefire.suiteXmlFiles=testSuite/buyEvent.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
 ```
 - Buy Vouchers (full flow):
 ```bash
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/buyVouchers.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
+mvn -Dsurefire.suiteXmlFiles=testSuite/buyVouchers.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
 ```
 
 ## Prerequisites
@@ -29,7 +29,7 @@ Drivers are automatically managed by WebDriverManager; local binaries in `browse
 
 ## Configuration
 - Environment and URLs are defined in `src/config_env/config.properties`.
-  - Supported env values: `staging`, `uat`.
+  - Supported env values: `staging`.
 - Customer test data lives in `src/datafile/customer/` (e.g., `login-phone.json`).
 
 You can override the env from the CLI; the framework reads `-Denv` and also accepts TestNG `<parameter name="env" .../>` from the suite XMLs.
@@ -45,17 +45,17 @@ mvn -Dsurefire.suiteXmlFiles=PATH/TO/YOUR_SUITE.xml test
 - Examples (customer):
 ```bash
 # Login only
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/login.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true test
+mvn -Dsurefire.suiteXmlFiles=testSuite/login.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true test
 
 # Full buy events flow
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/buyEvent.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
+mvn -Dsurefire.suiteXmlFiles=testSuite/buyEvent.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
 
 # Full buy vouchers flow
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/buyVouchers.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
+mvn -Dsurefire.suiteXmlFiles=testSuite/buyVouchers.xml -Denv=staging -Dbrowser=chrome -Dui.enabled=true -Dwait.timeout.customer=20 test
 ```
 
 ## Useful system properties
-- `-Denv=staging|uat` Choose environment (defaults to `staging`)
+- `-Denv=staging` Choose environment (defaults to `staging`)
 - `-Dbrowser=chrome|firefox|safari` Choose browser (defaults to `chrome`)
 - `-Dui.enabled=true|false` Run with visible browser (`true`) or headless (`false`, defaults to `true` in code)
 - `-Dwait.timeout.customer=SECONDS` Override default explicit wait for customer flows (default `15`)
@@ -63,11 +63,11 @@ mvn -Dsurefire.suiteXmlFiles=testSuite/customer/buyVouchers.xml -Denv=staging -D
 
 Examples:
 ```bash
-# Headless Firefox on UAT
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/buyEvent.xml -Denv=uat -Dbrowser=firefox -Dui.enabled=false test
+# Headless Firefox on Staging
+mvn -Dsurefire.suiteXmlFiles=testSuite/buyEvent.xml -Denv=staging -Dbrowser=firefox -Dui.enabled=false test
 
 # Increase wait time if your machine/network is slow
-mvn -Dsurefire.suiteXmlFiles=testSuite/customer/buyEvent.xml -Dwait.timeout.customer=25 test
+mvn -Dsurefire.suiteXmlFiles=testSuite/buyEvent.xml -Dwait.timeout.customer=25 test
 ```
 
 ## Reports
