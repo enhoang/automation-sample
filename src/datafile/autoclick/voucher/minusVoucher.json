@@ -1,0 +1,10 @@
+{
+  "clicks": [
+    {
+      "type": "xpath",
+      "locator": "//div[@class='flexCenter MuiBox-root css-16rswk9']//button[1]",
+      "times": 1,
+      "waitBeforeClick": 500
+    }
+  ]
+}

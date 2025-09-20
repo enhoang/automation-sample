@@ -1,0 +1,10 @@
+{
+  "clicks": [
+    {
+      "type": "xpath",
+      "locator": "//div[@role='presentation']//button[2]",
+      "times": 10,
+      "waitBeforeClick": 500
+    }
+  ]
+}
